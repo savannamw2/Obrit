@@ -119,7 +119,7 @@ void callBack(const Interface* pUI, void* p)
    double g = 9.80665;
    double r = 6378000;
    
-   double h = sqrt((pDemo -> ptGPS.getMetersX() * pDemo -> ptGPS.getMetersX()) + (pDemo -> ptGPS.getMetersY() * pDemo -> ptGPS.getMetersX())) - r;
+   double h = sqrt((pDemo -> ptGPS.getMetersX() * pDemo -> ptGPS.getMetersX()) + (pDemo -> ptGPS.getMetersY() * pDemo -> ptGPS.getMetersY())) - r;
    
    // acceleration
    double gh = g * ( r / (r + h)) * (r / (r + h));
@@ -135,7 +135,7 @@ void callBack(const Interface* pUI, void* p)
    
    // distance
    pDemo->ptGPS.setMetersX(pDemo -> ptGPS.getMetersX() + ((pDemo -> ptGPS.getDx()  + (ddx * tpf)) * tpf) + (0.5 * gh * (tpf * tpf)));
-   pDemo->ptGPS.set(pDemo -> ptGPS.getMetersY() + ((pDemo -> ptGPS.getDy()  + (ddy * tpf) * tpf)) + (0.5 * gh * (tpf * tpf)));
+   pDemo->ptGPS.setMetersY(pDemo -> ptGPS.getMetersY() + ((pDemo -> ptGPS.getDy()  + (ddy * tpf) * tpf)) + (0.5 * gh * (tpf * tpf)));
    
    // rotate the earth
    pDemo->angleEarth += rf;
