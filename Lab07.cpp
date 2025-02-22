@@ -135,7 +135,7 @@ void callBack(const Interface* pUI, void* p)
    
    // distance
    pDemo->ptGPS.setMetersX(pDemo -> ptGPS.getMetersX() + ((pDemo -> ptGPS.getDx()  + (ddx * tpf)) * tpf) + (0.5 * gh * (tpf * tpf)));
-   pDemo->ptGPS.setMetersY(pDemo -> ptGPS.getMetersY() + ((pDemo -> ptGPS.getDy()  + (ddy * tpf) * tpf)) + (0.5 * gh * (tpf * tpf)));
+   pDemo->ptGPS.setMetersY(pDemo -> ptGPS.getMetersY() + ((pDemo -> ptGPS.getDy()  + (ddy * tpf)) * tpf) + (0.5 * gh * (tpf * tpf)));
    
    // rotate the earth
    pDemo->angleEarth += rf;
